@@ -26,3 +26,9 @@ class BookingService:
         reservation_id = self.reservation_repo.add(reservation)
         reservation.reservation_id = reservation_id
         return reservation_id
+
+    def get_reservations_by_user(self, user_id: int):
+        return self.reservation_repo.get_by_user(user_id)
+
+    def get_reservations_by_room(self, room_id: int):
+        return self.reservation_repo.get_by_room(room_id)
